@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="个人作品集网站 —— 展示设计、开发与创意作品。">
+  <meta name="theme-color" content="#0a0c12">
+  <title>个人作品集</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="主导航">
+      <a class="brand" href="#home" aria-label="回到首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" id="brand-name">你的名字</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#works">作品</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="切换深色 / 浅色主题">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <line x1="12" y1="2" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="4" y2="12"></line>
+            <line x1="20" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow hero-eyebrow reveal">你好，我是</p>
+        <h1 class="hero-name reveal"><span id="hero-name">你的名字</span></h1>
+        <p class="hero-role reveal" id="hero-role">设计师 × 开发者</p>
+        <p class="hero-desc reveal" id="hero-desc">这里是一段简短的个人介绍。</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#works">查看作品 <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="#contact">与我联系</a>
+        </div>
+        <p class="hero-meta reveal" id="hero-meta">上海 · 开放合作中</p>
+      </div>
+
+      <a class="scroll-hint" href="#works" aria-label="向下滚动查看作品"></a>
+    </section>
+
+    <!-- ===== Works ===== -->
+    <section class="section works" id="works">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Portfolio</p>
+          <h2>精选作品</h2>
+          <p class="section-desc">从品牌到产品，从平面到影像，这里是我最近的一些尝试。</p>
+        </header>
+
+        <div class="filters reveal" id="filters" role="tablist" aria-label="作品分类筛选"></div>
+        <div class="works-grid" id="works-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">About</p>
+          <h2>关于我</h2>
+        </header>
+
+        <div class="about-grid">
+          <aside class="about-card reveal">
+            <div class="avatar" id="avatar" aria-hidden="true">LY</div>
+            <h3 class="about-name" id="about-name">你的名字</h3>
+            <p class="about-tagline" id="about-tagline">一句话自我介绍</p>
+            <ul class="stats" id="stats"></ul>
+          </aside>
+
+          <div class="about-body reveal">
+            <p id="bio-1"></p>
+            <p id="bio-2"></p>
+            <div class="chips-block">
+              <h4>擅长领域</h4>
+              <div class="chips" id="skills"></div>
+            </div>
+            <div class="chips-block">
+              <h4>常用工具</h4>
+              <div class="chips chips-soft" id="tools"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>一起创造点什么？</h2>
+          <p class="contact-desc">无论是项目合作、工作机会，还是只想打个招呼，欢迎随时联系我。</p>
+          <a class="btn btn-primary btn-lg" id="contact-email" href="mailto:hello@example.com">hello@example.com</a>
+
+          <div class="socials" id="socials"></div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <label class="sr-only" for="form-name">你的名字</label>
+              <input id="form-name" name="name" type="text" placeholder="你的名字" autocomplete="name" required>
+              <label class="sr-only" for="form-email">你的邮箱</label>
+              <input id="form-email" name="email" type="email" placeholder="你的邮箱" autocomplete="email" required>
+            </div>
+            <label class="sr-only" for="form-message">留言</label>
+            <textarea id="form-message" name="message" rows="5" placeholder="想说的话……" required></textarea>
+            <button class="btn btn-primary" type="submit">发送邮件 →</button>
+            <p class="form-note">提交后会打开你的邮件客户端，正文会自动填好。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="footer-year">2026</span> <span id="footer-name">你的名字</span> · 用 <span class="heart">♥</span> 与 <span class="coffee">☕</span> 制作</p>
+      <p class="footer-links"><a href="#home">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
