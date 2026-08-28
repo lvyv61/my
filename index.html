@@ -60,7 +60,7 @@
 
       <div class="container hero-inner">
         <p class="eyebrow hero-eyebrow reveal">你好，我是</p>
-        <h1 class="hero-name reveal"><span id="hero-name">你的名字</span></h1>
+        <h1 class="hero-name"><span id="hero-name">你的名字</span></h1>
         <p class="hero-role reveal" id="hero-role">设计师 × 开发者</p>
         <p class="hero-desc reveal" id="hero-desc">这里是一段简短的个人介绍。</p>
         <div class="hero-cta reveal">
@@ -73,11 +73,16 @@
       <a class="scroll-hint" href="#works" aria-label="向下滚动查看作品"></a>
     </section>
 
+    <!-- ===== 滚动字幕 ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track"></div>
+    </div>
+
     <!-- ===== Works ===== -->
     <section class="section works" id="works">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Portfolio</p>
+          <p class="eyebrow">01 · Portfolio</p>
           <h2>精选作品</h2>
           <p class="section-desc">从品牌到产品，从平面到影像，这里是我最近的一些尝试。</p>
         </header>
@@ -91,7 +96,7 @@
     <section class="section about" id="about">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">About</p>
+          <p class="eyebrow">02 · About</p>
           <h2>关于我</h2>
         </header>
 
@@ -123,7 +128,7 @@
     <section class="section contact" id="contact">
       <div class="container">
         <div class="contact-card reveal">
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">03 · Contact</p>
           <h2>一起创造点什么？</h2>
           <p class="contact-desc">无论是项目合作、工作机会，还是只想打个招呼，欢迎随时联系我。</p>
           <a class="btn btn-primary btn-lg" id="contact-email" href="mailto:hello@example.com">hello@example.com</a>
@@ -153,6 +158,14 @@
       <p class="footer-links"><a href="#home">回到顶部 ↑</a></p>
     </div>
   </footer>
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+  <button id="to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <script src="js/main.js"></script>
 </body>
