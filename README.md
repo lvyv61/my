@@ -51,13 +51,13 @@
 
 ### 3. 头像与照片
 
-当前头像为姓名首字母圆形，无需图片。想换成真实照片时，可以把 `index.html` 中
+把照片放进 `assets` 文件夹（建议正方形构图，如 `assets/avatar.jpg`），然后在 `js/main.js` 的 `CONFIG` 中设置：
 
-```html
-<div class="avatar" id="avatar" aria-hidden="true">LY</div>
+```js
+avatar: "assets/avatar.jpg",
 ```
 
-替换为 `<img class="avatar" src="assets/avatar.jpg" alt="我的照片">`，并在 `style.css` 中给 `.avatar` 去掉文字样式即可。
+留空 `""` 则继续显示姓名首字母。照片会自动等比居中裁切到方框内，无需额外处理。上传前建议先压缩到 200KB 以内，网站加载会更快。
 
 ### 4. 站点图标
 

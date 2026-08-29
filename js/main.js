@@ -13,27 +13,29 @@
   const CONFIG = {
     name: "陆宇",
     initials: "LY",
+    // 头像照片路径（如 "assets/avatar.jpg"）；留空 "" 则显示姓名首字母
+    avatar: "assets/me-avatar.webp",
     role: "AIGC爱好者",
     tagline: "AI让世界开始加速",
     intro:
       "你好，我是陆宇，一位在不断学习新技术的AIGC爱好者。",
     bio2:
-      "过去几年里，我参与过从品牌重塑、产品界面到内容创作的各类项目，和不同规模的团队一起把想法变成现实。工作之外，我喜欢用相机记录城市，也喜欢研究那些「好得让人察觉不到」的细节。",
+      "过去几年里，我参与过从品牌重塑、产品界面到内容创作的各类项目，和不同规模的团队一起把想法变成现实。",
     location: "福建 · 中国",
     available: "开放合作中",
     email: "394037725@qq.com",
     stats: [
-      { value: "6+", label: "年设计经验" },
+      { value: "1+", label: "年设计经验" },
       { value: "40+", label: "完成项目" },
       { value: "15+", label: "合作品牌" }
     ],
-    skills: ["品牌设计", "UI/UX 设计", "网页开发", "插画", "摄影", "视频剪辑"],
-    tools: ["Figma", "Photoshop", "Illustrator", "Blender", "VS Code", "After Effects"],
+    skills: ["3D设计", "AIGC", "视频剪辑", "网页开发"],
+    tools: ["Blender", "3dmax", "codex", "photoshop","剪映", ],
     socials: [
-      { label: "GitHub", url: "https://github.com/" },
-      { label: "Dribbble", url: "https://dribbble.com/" },
-      { label: "微博", url: "https://weibo.com/" },
-      { label: "B站", url: "https://space.bilibili.com/3546391250995736" }
+      { label: "bilibili", url: "https://space.bilibili.com/3546391250995736" },
+      { label: "GitHub", url: "https://github.com/" }
+ 
+  
     ]
   };
 
@@ -49,21 +51,21 @@
   */
   const PROJECTS = [
     {
-      title: "别瞎几把搞了",
-      category: "品牌设计",
+      title: "iphone 17 pro max",
+      category: "3D设计",
       year: "2026",
-      desc: "为独立咖啡品牌「焙」重塑完整视觉系统：从标志、包装到空间导视，上线 3 个月门店复购率提升 22%。",
-      tags: ["Logo", "VI", "包装"],
-      cover: "assets/luyu.png",
+      desc: "个人独自完成产品建模渲染",
+      tags: ["3D", "建模", "渲染"],
+      cover: "assets/iPhone17promax.png",
       link: ""
     },
     {
-      title: "Flow 数据仪表盘",
-      category: "UI/UX",
+      title: "电商主图详情页",
+      category: "AIGC",
       year: "2026",
-      desc: "为 SaaS 团队设计的实时数据分析平台，重构信息架构与设计系统，关键操作路径缩短 40%。",
+      desc: "部署工作流实现一键生成电商主图详情图",
       tags: ["Web App", "设计系统", "原型"],
-      cover: "assets/show1.png",
+      cover: "assets/电商图.png",
       link: ""
     },
     {
@@ -75,24 +77,7 @@
       cover: "linear-gradient(135deg, #22c1a3, #2f80ed)",
       link: ""
     },
-    {
-      title: "城市光影",
-      category: "摄影",
-      year: "2026",
-      desc: "两年间行走于 12 座城市，用 2000+ 张胶片记录街头的光、影与日常瞬间，精选 30 张集结成册。",
-      tags: ["胶片", "街头", "影集"],
-      cover: "linear-gradient(135deg, #1f3b73, #59c3f0)",
-      link: ""
-    },
-    {
-      title: "《山海》幻想插画系列",
-      category: "插画",
-      year: "2026",
-      desc: "以《山海经》为灵感的系列插画，融合水墨笔触与数字技法，共 12 幅，曾在线上展览展出。",
-      tags: ["数字插画", "系列", "展览"],
-      cover: "linear-gradient(135deg, #b85cff, #ff6ec7)",
-      link: ""
-    },
+  
     {
       title: "产品宣传动画",
       category: "动态设计",
@@ -164,7 +149,16 @@
     $("hero-desc").textContent = CONFIG.intro;
     $("hero-meta").textContent = `${CONFIG.location} · ${CONFIG.available}`;
 
-    $("avatar").textContent = CONFIG.initials;
+    const avatarEl = $("avatar");
+    if (CONFIG.avatar) {
+      avatarEl.innerHTML = `<img src="${CONFIG.avatar}" alt="${CONFIG.name} 的头像">`;
+      const mark = $("brand-mark");
+      mark.style.backgroundImage = `url("${CONFIG.avatar}")`;
+      mark.style.backgroundSize = "cover";
+      mark.style.backgroundPosition = "center";
+    } else {
+      avatarEl.textContent = CONFIG.initials;
+    }
     $("about-name").textContent = CONFIG.name;
     $("about-tagline").textContent = CONFIG.tagline;
     $("bio-1").textContent = CONFIG.intro;
@@ -406,12 +400,10 @@
     if (!track) return;
     const items = [
       "AIGC 创作",
-      "品牌设计",
-      "UI/UX",
+      "3D设计",
+      "视频剪辑",
       "网页开发",
-      "摄影",
-      "插画",
-      "动态设计"
+      
     ];
     const group = items
       .map(
@@ -484,7 +476,7 @@
           <div class="work-tags"></div>
           <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="display:none">查看案例 ↗</a>
         </div>
-        <button class="lightbox-close" aria-label="关闭">
+        <button class="lightbox-close" data-action="close" aria-label="关闭">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>`;

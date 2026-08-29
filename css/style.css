@@ -854,6 +854,14 @@ ul {
   pointer-events: none;
 }
 
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
 .about-name {
   font-size: 1.4rem;
   font-weight: 700;
